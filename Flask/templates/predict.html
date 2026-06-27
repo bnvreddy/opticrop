@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opti Crop - Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/predict" class="active">FindYourCrop</a>
+    </div>
+
+    <div class="container">
+        <h2>Find Your Crop</h2>
+        <p style="color: #777; margin-bottom: 25px;">Enter the soil and climate conditions below to get a crop recommendation.</p>
+
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label>Nitrogen (N)</label>
+                <input type="number" step="any" name="nitrogen" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Phosphorous (P)</label>
+                <input type="number" step="any" name="phosphorous" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Potassium (K)</label>
+                <input type="number" step="any" name="potassium" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Temperature</label>
+                <input type="number" step="any" name="temperature" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Humidity</label>
+                <input type="number" step="any" name="humidity" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label>pH Level</label>
+                <input type="number" step="any" name="ph" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Rainfall</label>
+                <input type="number" step="any" name="rainfall" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn-predict">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <div class="result-box">
+                {{ prediction_text }}
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
