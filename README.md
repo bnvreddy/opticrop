@@ -51,11 +51,12 @@ Open your terminal or command prompt and navigate to the main `OptiCrop` folder.
 
 ### Step 2: Create a Virtual Environment (Recommended)
 ```bash
-python -m venv venv
+python -m venv .venv
 ```
 Activate the virtual environment:
-*   **Windows:** `venv\Scripts\activate`
-*   **macOS/Linux:** `source venv/bin/activate`
+
+* **Windows:** `.venv\Scripts\activate`
+* **macOS/Linux:** `source .venv/bin/activate`
 
 ### Step 3: Install Dependencies
 Install the required Python packages using the provided `requirements.txt` file:
@@ -100,3 +101,5 @@ numpy
 matplotlib
 seaborn
 ```
+
+​
